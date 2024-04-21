@@ -28,14 +28,16 @@ class RateLimiter {
     });
   }
 
-  sendRequest(task, ...args) {
-    return this.#currentRunningTasks === this.#allowedRequestsPerSecCount
-      ? this._throwError(task, ...args)
-      : this._executeRequest(task, ...args);
+  sendRequest(task) {
+    return (...args) => {
+      return this.#currentRunningTasks === this.#allowedRequestsPerSecCount
+        ? this._throwError(task, ...args)
+        : this._executeRequest(task, ...args);
+    };
   }
 }
 
-const rateLimiter = new RateLimiter();
+/***************************** EXECUTION ******************************/
 
 const mockRequest = (id) => {
   return new Promise((resolve) => {
@@ -46,9 +48,12 @@ const mockRequest = (id) => {
     }, 1000);
   });
 };
+const rateLimiter = new RateLimiter();
 
-console.log(rateLimiter.sendRequest(mockRequest, 1));
-console.log(rateLimiter.sendRequest(mockRequest, 2));
-console.log(rateLimiter.sendRequest(mockRequest, 3));
-console.log(rateLimiter.sendRequest(mockRequest, 4));
-console.log(rateLimiter.sendRequest(mockRequest, 5));
+const sendRequestWithRateLimiter = rateLimiter.sendRequest(mockRequest);
+
+console.log(sendRequestWithRateLimiter(1));
+console.log(sendRequestWithRateLimiter(2));
+console.log(sendRequestWithRateLimiter(3));
+console.log(sendRequestWithRateLimiter(4));
+console.log(sendRequestWithRateLimiter(5));
