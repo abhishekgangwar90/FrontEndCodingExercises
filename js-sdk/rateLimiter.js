@@ -1,9 +1,10 @@
 /**
  * Build a rate limiter which does the following
  *
- *  1 - Allows a given number of requests per seconds.
+ *  1 - Allows a given number of requests to run parallely.
  *  2 - If more than given number requests are coming in then
- *      2a - return an error for extra requests
+ *      2a - return an error for extra requests.
+ *      2b - return the success or error message for these requests.
  */
 
 class RateLimiter {
