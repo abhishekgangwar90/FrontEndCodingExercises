@@ -1,0 +1,42 @@
+header {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #e6e6e6;
+}
+
+.progressive-bar-container {
+  height: 20px;
+  width: 80%;
+  border: 1px solid black;
+  margin: 10px 0;
+}
+
+.progressive-bar {
+  background-color: black;
+  width: 0%;
+  height: 20px;
+  transition: width ease;
+}
+
+.button-group {
+  margin: 50px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, max-content);
+}
+
+.button {
+  height: 30px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 8px;
+}

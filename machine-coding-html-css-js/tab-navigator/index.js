@@ -1,0 +1,3 @@
+class TabNavigator {}
+
+function handleNavItemClick() {}

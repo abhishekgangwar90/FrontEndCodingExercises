@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Bar</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <header>
+      <h2>Progress Bar</h2>
+      <h4>Click on button to see how this works</h4>
+    </header>
+
+    <div class="container">
+      <div class="progressive-bar-container">
+        <div class="progressive-bar"></div>
+      </div>
+
+      <div class="progressive-bar-container">
+        <div class="progressive-bar"></div>
+      </div>
+
+      <div class="progressive-bar-container">
+        <div class="progressive-bar"></div>
+      </div>
+
+      <div class="progressive-bar-container">
+        <div class="progressive-bar"></div>
+      </div>
+    </div>
+
+    <footer class="button-group">
+      <button type="button" class="button" onclick="startAnimation()">
+        Start one Animation
+      </button>
+      <button type="button" class="button" onclick="startAllAnimation()">
+        Start All Animation
+      </button>
+      <button type="button" class="button" onclick="startGradualAnimation()">
+        Start Gradual Animation
+      </button>
+
+      <button
+        type="button"
+        class="button"
+        onclick="startAnimationAfterOneFinishes()"
+      >
+        Start Animation after one finishes
+      </button>
+    </footer>
+
+    <script src="./index.js" type="text/javascript"></script>
+  </body>
+</html>
