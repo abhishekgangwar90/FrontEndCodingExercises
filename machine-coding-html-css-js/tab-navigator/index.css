@@ -1,3 +1,15 @@
 header {
   text-align: center;
 }
+
+.content {
+  display: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+.content-active {
+  display: block;
+}
