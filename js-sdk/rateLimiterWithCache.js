@@ -73,7 +73,7 @@ class RateLimiterWithCache {
 }
 
 function apiCall(args) {
-  console.log("************************   api called for", args);
+  console.log("**********  api called for", args);
   return new Promise((res) => {
     setTimeout(() => {
       res(args);
